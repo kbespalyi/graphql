@@ -1,0 +1,4 @@
+--ui bdd
+--require test/tools/
+--check-leaks
+--timeout 40000
