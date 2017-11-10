@@ -1,17 +1,6 @@
 version: 2.0
-workflows:
-  version: 2
-  build_and_test:
-    jobs:
-      - build
-      - test:
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
 jobs:
-   build:
+  build:
      working_directory: ~/graphql-server
      docker:
        - image: circleci/node:9.1.0
@@ -56,3 +45,14 @@ jobs:
       - store_test_results:
           path: test-results
           destination: test-results/junit
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
