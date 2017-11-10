@@ -1,4 +1,15 @@
 version: 2.0
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
 jobs:
    build:
      working_directory: ~/graphql-server
@@ -45,15 +56,3 @@ jobs:
       - store_test_results:
           path: test-results
           destination: test-results/junit
-workflows:
-  version: 2
-  build_and_test:
-    jobs:
-      build
-      test
-      #- test:
-      #    requires:
-      #      - build
-      #    filters:
-      #      branches:
-      #        only: master
