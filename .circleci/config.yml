@@ -1,34 +1,34 @@
-version: 2.0
+version: 2
 jobs:
   build:
-     working_directory: ~/graphql-server
-     docker:
-       - image: circleci/node:9.1.0
-       - image: mongo:3.4.10
-     parallelism: 1
-     steps:
-       - checkout
-       - setup_remote_docker:
-           docker_layer_caching: true
-       - run:
-           name: "Checking Versions"
-           command: |
-             node --version
-             npm --version
-       #- run:
-       #    name: Update npm
-       #    command: 'sudo npm install -g npm@latest'
-       - restore_cache:
-           keys:
-             - dependency-cache-{{ checksum "package.json" }}
-             - dependency-cache- # used if checksum fails
-       - run:
-           name: Install npm
-           command: npm install
-       - save_cache:
-           key: dependency-cache-{{ checksum "package.json" }}
-           paths:
-             - node_modules
+    working_directory: ~/graphql-server
+    docker:
+      - image: circleci/node:9.1.0
+      - image: mongo:3.4.10
+    parallelism: 1
+    steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - run:
+          name: "Checking Versions"
+          command: |
+            node --version
+            npm --version
+      #- run:
+      #    name: Update npm
+      #    command: 'sudo npm install -g npm@latest'
+      - restore_cache:
+          keys:
+            - dependency-cache-{{ checksum "package.json" }}
+            - dependency-cache- # used if checksum fails
+      - run:
+          name: Install npm
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
       - run:
           name: Test
           command: npm test
