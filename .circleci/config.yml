@@ -1,6 +1,6 @@
 version: 2.0
 jobs:
-  build_and_test:
+  build:
      working_directory: ~/graphql-server
      docker:
        - image: circleci/node:9.1.0
