@@ -10,11 +10,6 @@ jobs:
        - checkout
        - setup_remote_docker:
            docker_layer_caching: true
-       - run:
-           name: "Checking Versions"
-           command: |
-             node --version
-             npm --version
        #- run:
        #   name: Update npm
        #   command: 'sudo npm install -g npm@latest'
@@ -30,11 +25,24 @@ jobs:
            paths:
              - node_modules
   test:
+    working_directory: ~/graphql-server
     docker:
       - image: circleci/node:9.1.0
       - image: mongo:3.4.10
+    parallelism: 1
     steps:
       - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - run:
+          name: "Checking Versions"
+          command: |
+            node --version
+            npm --version
+      - restore_cache:
+         keys:
+           - dependency-cache-{{ checksum "package.json" }}
+           - dependency-cache- # used if checksum fails
       - run:
           name: Test
           command: npm test
