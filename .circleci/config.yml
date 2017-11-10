@@ -11,8 +11,13 @@ jobs:
        - setup_remote_docker:
            docker_layer_caching: true
        - run:
-           name: Update npm
-           command: 'sudo npm install -g npm@latest'
+           name: "Checking Versions"
+           command: |
+             node --version
+             npm --version
+       #- run:
+       #   name: Update npm
+       #   command: 'sudo npm install -g npm@latest'
        - restore_cache:
            keys:
              - dependency-cache-{{ checksum "package.json" }}
