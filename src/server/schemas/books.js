@@ -47,6 +47,14 @@ const BookType = new GraphQLObjectType({
       type: GraphQLString,
       resolve: xml => xml.GoodreadsResponse.book[0].isbn[0]
     },
+    isbn13: {
+      type: GraphQLString,
+      resolve: xml => xml.GoodreadsResponse.book[0].isbn13[0]
+    },
+    description: {
+      type: GraphQLString,
+      resolve: xml => xml.GoodreadsResponse.book[0].description[0]
+    },
     authors: {
       type: new GraphQLList(AuthorType),
       resolve: (xml, args, context) => {
@@ -89,6 +97,13 @@ module.exports = new GraphQLSchema({
           id: { type: GraphQLInt }
         },
         resolve: (root, args, context) => context.authorLoader.load(args.id)
+      },
+      book: {
+        type: BookType,
+        args: {
+          isbn: { type: GraphQLString }
+        },
+        resolve: (root, args, context) => context.bookByISBNLoader.load(args.isbn)
       }
     })
   })
