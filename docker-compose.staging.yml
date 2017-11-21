@@ -1,0 +1,57 @@
+version: '2'
+services:
+  staging-deps:
+    image: server-graphql
+    environment:
+      - NODE_ENV=production
+      - PORT=4000
+      - RABBITMQ_URL=amqp://rabbitmq:5672
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - MONGO_URL=mongodb://mongo:27017/graphql-core-production
+    networks:
+      - default
+    depends_on:
+      - redis
+      - rabbitmq
+      - mongo
+  rabbitmq:
+    image: rabbitmq:3.6-management
+    ports:
+      - 15672:15672
+    hostname: rabbitmq
+    networks:
+      - default
+  redis:
+    image: redis
+    networks:
+      - default
+  mongo:
+    image: mongo:3.4.10
+    ports:
+      - 27017:27017
+    networks:
+      - default
+  staging:
+    image: node:9.1.0
+    volumes:
+      - .:/usr/src/service
+    working_dir: /usr/src/service
+    networks:
+      - default
+    environment:
+      - apiUrl=http://staging-deps:4000
+      - PORT=4000
+      - RABBITMQ_URL=amqp://rabbitmq:5672
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - MONGO_URL=mongodb://mongo:27017/graphql-core-staging
+    command: npm run start
+  clean:
+    extends:
+      service: staging
+    command: rm -rf node_modules
+  install:
+    extends:
+      service: staging
+    command: npm run install

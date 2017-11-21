@@ -1,5 +1,5 @@
 {
-  "name": "graphql-demo",
+  "name": "server-graphql",
   "version": "1.0.0",
   "description": "Demo GraphQL",
   "author": "Khusein Bespalyi",
@@ -7,7 +7,8 @@
   "main": "server.js",
   "scripts": {
     "test": "DB=mongodb NODE_ENV=test ./node_modules/.bin/nyc mocha -R spec test/tests/**/*.js test/tests/**/**/*.js test/tests/**/**/**/*.js ",
-    "start": "node ./src/server/server.js"
+    "start": "node ./src/server/server.js",
+    "prepush": "make ci"
   },
   "dependencies": {
     "bluebird": "~3.5.1",

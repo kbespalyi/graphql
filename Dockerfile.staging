@@ -1,0 +1,45 @@
+FROM node:9.1.0 AS build
+
+# setup user home dir
+ENV USER node
+
+ENV PORT=4000
+EXPOSE $PORT
+
+#RUN apk add --update --no-cache curl
+
+# setup application dir
+ENV APP_HOME /app
+RUN mkdir -vp $APP_HOME
+RUN chown $USER:$USER $APP_HOME
+
+# run next commands as user deamon
+USER $USER
+ENV HOME /home/$USER
+
+# setup temp dir for building distribution
+USER root
+
+#install required packages (magick)
+#RUN apt-get update
+#RUN apt-get install apt-utils netcat -y
+#RUN apt-get install imagemagick libmagick++-dev  libmagick++-6.q16-dev -y
+#ENV PATH /usr/lib/x86_64-linux-gnu/ImageMagick-6.8.9/bin-Q16:$PATH
+
+WORKDIR $APP_HOME
+COPY . $APP_HOME
+RUN chown -R $USER:$USER $APP_HOME
+USER $USER
+
+# set NPM stuff
+ENV NODE_ENV staging
+ENV NPM_CONFIG_LOGLEVEL warn
+
+#install npm packages first
+
+# install staging packages
+RUN npm install
+
+# install NPM packages
+WORKDIR $APP_HOME
+CMD npm start

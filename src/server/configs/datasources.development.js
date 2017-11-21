@@ -7,7 +7,7 @@ const DATASTORES = {
   memory:  {},
   mongodb: {
     host:     '0.0.0.0',
-    database: 'graphql-core-test',
+    database: 'graphql-core-development',
     username: '',
     password: '',
     port:     27017
