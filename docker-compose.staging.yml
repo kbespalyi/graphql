@@ -1,14 +1,23 @@
 version: '2'
 services:
   staging-deps:
+    build:
+      context: .
+      dockerfile: Dockerfile.staging
+      args:
+        port: 5300
     image: server-graphql
+    ports:
+      - "127.0.0.1:4300:5300"
+    expose:
+      - "5300"
     environment:
-      - NODE_ENV=production
-      - PORT=4000
+      - NODE_ENV=staging
+      - PORT=4300
       - RABBITMQ_URL=amqp://rabbitmq:5672
       - REDIS_HOST=redis
       - REDIS_PORT=6379
-      - MONGO_URL=mongodb://mongo:27017/graphql-core-production
+      - MONGO_URL=mongodb://mongo:27017/graphql-core-staging
     networks:
       - default
     depends_on:
@@ -29,24 +38,44 @@ services:
   mongo:
     image: mongo:3.4.10
     ports:
-      - 27017:27017
+      - 27019:27019
     networks:
       - default
   staging:
     image: node:9.1.0
+    ports:
+      - 4200:5200
     volumes:
       - .:/usr/src/service
     working_dir: /usr/src/service
     networks:
       - default
     environment:
-      - apiUrl=http://staging-deps:4000
-      - PORT=4000
+      - apiUrl=http://staging-deps:5200
+      - NODE_ENV=staging
+      - PORT=4200
       - RABBITMQ_URL=amqp://rabbitmq:5672
       - REDIS_HOST=redis
       - REDIS_PORT=6379
       - MONGO_URL=mongodb://mongo:27017/graphql-core-staging
     command: npm run start
+  test:
+    image: node:9.1.0
+    ports:
+      - 4100:5100
+    volumes:
+      - .:/usr/src/service
+    working_dir: /usr/src/service
+    networks:
+      - default
+    environment:
+      - NODE_ENV=test
+      - PORT=4100
+      - RABBITMQ_URL=amqp://rabbitmq:5672
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - MONGO_URL=mongodb://mongo:27017/graphql-core-staging
+    command: npm run test
   clean:
     extends:
       service: staging

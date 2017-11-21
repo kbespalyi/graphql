@@ -26,7 +26,7 @@ module.exports = () => {
   output.standardSetup = () => {
     // If no config have to read firstly
     if (!output.config) {
-      const config = require('../../src/server/configs/datasources.local.js');
+      const config = require('../../src/server/configs/datasources.test.js');
       if (config.db.host !== '0.0.0.0' || config.db.port !== 27017) {
         throw new Error('Invalid DB');
       } else if (process.env.NODE_ENV !== 'test') {
