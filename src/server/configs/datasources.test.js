@@ -10,7 +10,7 @@ const DATASTORES = {
     database: 'graphql-core-test',
     username: '',
     password: '',
-    port:     27019
+    port:     27017
   }
 };
 

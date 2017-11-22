@@ -17,7 +17,7 @@ services:
       - RABBITMQ_URL=amqp://rabbitmq:5672
       - REDIS_HOST=redis
       - REDIS_PORT=6379
-      - MONGO_URL=mongodb://mongo:27017/graphql-core-staging
+      - MONGO_URL=mongodb://mongo:27019/graphql-core-staging
     networks:
       - default
     depends_on:
@@ -51,13 +51,13 @@ services:
     networks:
       - default
     environment:
-      - apiUrl=http://staging-deps:5200
+      - apiUrl=http://staging-deps:5300
       - NODE_ENV=staging
       - PORT=4200
       - RABBITMQ_URL=amqp://rabbitmq:5672
       - REDIS_HOST=redis
       - REDIS_PORT=6379
-      - MONGO_URL=mongodb://mongo:27017/graphql-core-staging
+      - MONGO_URL=mongodb://mongo:27019/graphql-core-staging
     command: npm run start
   test:
     image: node:9.1.0
