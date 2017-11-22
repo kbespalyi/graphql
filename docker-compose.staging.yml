@@ -8,7 +8,7 @@ services:
         port: 5300
     image: server-graphql
     ports:
-      - "127.0.0.1:4300:5300"
+      - "127.0.0.1:5300:4300"
     expose:
       - "5300"
     environment:
