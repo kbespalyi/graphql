@@ -1,0 +1,6 @@
+- service: web
+  type: push
+  tag: master
+  image_name: registry.heroku.com/graphql-api-server/app
+  registry: registry.heroku.com
+#  dockercfg_service: heroku_dockercfg

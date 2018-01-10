@@ -38,7 +38,13 @@ describe('Test environment', () => {
     })
     .then(() => {
       expect(t.app.get('NODE_ENV')).to.equals('test');
-      expect(t.app.get('dbconfig')).to.deep.equal(t.config);
+      expect(t.app.get('appConfig')).to.deep.equal(t.config);
+
+      const appConfig = t.app.get('appConfig');
+      expect(appConfig.keys).to.be.an('object');
+      expect(appConfig.keys.goodreadsApiKey).to.be.not.empty;
+      expect(appConfig.keys.googleApiKey).to.be.not.empty;
+
       done();
     })
     .catch((err) => {

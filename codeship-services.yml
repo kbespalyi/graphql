@@ -1,0 +1,8 @@
+web:
+  build:
+    image: registry.heroku.com/graphql-api-server/app
+    dockerfile_path: ./Dockerfile.staging
+#heroku_dockercfg:
+#  image: codeship/heroku-dockercfg-generator
+#  add_docker: true
+#  encrypted_env_file: heroku.env.encrypted

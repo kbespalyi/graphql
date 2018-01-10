@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile.staging
       args:
         port: 5300
-    image: server-graphql
+    image: graphql-api-server
     ports:
       - "127.0.0.1:5300:4300"
     expose:

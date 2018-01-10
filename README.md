@@ -6,7 +6,7 @@ make ci
 
 #Docker build
 
-1) docker image build -f Dockerfile.staging --build-arg port=5300 -t server-graphql .
+1) docker image build -f Dockerfile.staging --build-arg port=5300 -t graphql-api-server .
 2) docker-compose -f docker-compose.staging.yml up -d staging-deps
 
 #Docker run graphql

@@ -11,10 +11,14 @@ P.config({
   warnings: false
 });
 
+const fs = require('fs');
+if (fs.existsSync('./.env')) {
+  require('dotenv').config();
+}
+
 const express = require('express');
 const graphqlHTTP = require('express-graphql');
 const app = express();
-const schema = require('./schemas/books');
 const fetch = require('node-fetch')
 const DataLoader = require('dataloader')
 const util = require('util');
@@ -29,12 +33,12 @@ if (!NODE_ENV) {
 
 app.set('NODE_ENV', NODE_ENV);
 
-let dbconfig = {};
+let appConfig = {};
 
 try {
-  dbconfig = require(`./configs/datasources.${NODE_ENV}.js`);
-  if (dbconfig && (NODE_ENV === 'local' || NODE_ENV === 'test')) {
-    if (dbconfig.db.host !== '0.0.0.0' || dbconfig.db.port !== 27017) {
+  appConfig = require(`./configs/datasources.${NODE_ENV}.js`);
+  if (appConfig && (NODE_ENV === 'local' || NODE_ENV === 'test')) {
+    if (appConfig.db.host !== '0.0.0.0' || appConfig.db.port !== 27017) {
       throw new Error('Invalid DB');
     }
   }
@@ -42,9 +46,17 @@ try {
   throw new Error(`Invalid NODE_ENV or datasources.${NODE_ENV}.js not found`);
 }
 
-app.set('dbconfig', dbconfig);
+app.set('appConfig', appConfig);
 
-const fetchAuthor = id =>fetch(`https://www.goodreads.com/author/show.xml?id=${id}&key=6GqmaABbsv03cGt1K6KIsg`)
+
+const translate = require('./services/translateService');
+translate.applyApiKey(appConfig.keys.googleApiKey);
+
+const schema = require('./schemas/books');
+
+const goodreadsApiKey = appConfig.keys.goodreadsApiKey;
+
+const fetchAuthor = id =>fetch(`https://www.goodreads.com/author/show.xml?id=${id}&key=${goodreadsApiKey}`)
   .then(response => response.text())
   .then(xml => {
     if (xml.startsWith('Invalid API key')) {
@@ -55,7 +67,7 @@ const fetchAuthor = id =>fetch(`https://www.goodreads.com/author/show.xml?id=${i
   })
   .then(parseXML)
 
-const fetchBook = id => fetch(`https://www.goodreads.com/book/show/${id}.xml?key=6GqmaABbsv03cGt1K6KIsg`)
+const fetchBook = id => fetch(`https://www.goodreads.com/book/show/${id}.xml?key=${goodreadsApiKey}`)
   .then(response => response.text())
   .then(xml => {
     if (xml.startsWith('Invalid API key')) {
@@ -66,7 +78,7 @@ const fetchBook = id => fetch(`https://www.goodreads.com/book/show/${id}.xml?key
   })
   .then(parseXML)
 
-const fetchBookByISBN = isbn => fetch(`https://www.goodreads.com/book/isbn/${isbn}?key=6GqmaABbsv03cGt1K6KIsg`)
+const fetchBookByISBN = isbn => fetch(`https://www.goodreads.com/book/isbn/${isbn}?key=${goodreadsApiKey}`)
   .then(response => response.text())
   .then(xml => {
     if (xml.startsWith('Invalid API key')) {
@@ -77,7 +89,7 @@ const fetchBookByISBN = isbn => fetch(`https://www.goodreads.com/book/isbn/${isb
   })
   .then(parseXML)
 
-app.use('/graphql',
+app.use('/',
   graphqlHTTP(req => {
 
     const authorLoader = new DataLoader(keys => Promise.all(keys.map(fetchAuthor)));
@@ -100,7 +112,9 @@ app.use('/graphql',
 app.startRestApp = function(cb) {
   // start the web server
   return app.listen(process.env.PORT || 4000, function() {
-    console.log('GraphQL Server is now running on localhost:' + (process.env.PORT || 4000));
+    if (process.env.NODE_ENV !== 'test') {
+      console.log('GraphQL Server is now running on localhost:' + (process.env.PORT || 4000));
+    }
     if (cb) {
       return cb(this);
     }

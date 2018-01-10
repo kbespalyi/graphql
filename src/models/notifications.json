@@ -1,0 +1,16 @@
+{
+ "_id": ObjectId,
+ "token": String,
+ "subscribed_on": Date,
+ "user_id": Integer,
+ "fingerprint": String,
+ "details": [
+   "browser" : String,
+   "os" : String,
+   "osVersion" : String,
+   "device" : String,
+   "deviceType" : String,
+   "deviceVendor" : String,
+   "cpu" : String
+ ]
+}

@@ -1,16 +1,29 @@
 {
   "name": "server-graphql",
   "version": "1.0.0",
-  "description": "Demo GraphQL",
-  "author": "Khusein Bespalyi",
-  "license": "ISC",
+  "description": "Demo for GraphQL",
+  "author": "Khusein Bespalyi <khusein.bespalyi@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "codeship",
+    "heroku",
+    "docker",
+    "cli",
+    "heroku-plugin",
+    "graphql"
+  ],
   "main": "server.js",
   "scripts": {
+    "build": "docker build -t kbespalyi/graphql .",
+    "start": "docker run -d --restart always -p 80:5300 --env-file .env kbespalyi/graphql node index.js",
+    "daemon": "node_modules/.bin/nodemon ./src/server/server.js",
     "test": "DB=mongodb NODE_ENV=test ./node_modules/.bin/nyc mocha -R spec test/tests/**/*.js test/tests/**/**/*.js test/tests/**/**/**/*.js ",
-    "start": "node ./src/server/server.js",
     "prepush": "make ci"
   },
   "dependencies": {
+    "dotenv": "^4.0.0",
+    "heroku-cli-util": "^1.8.1",
+    "heroku-client": "^1.9.1",
     "bluebird": "~3.5.1",
     "bson-objectid": "1.2.0",
     "busboy": "0.2.14",
@@ -31,6 +44,7 @@
     "express-graphql": "^0.6.11",
     "graphql": "^0.11.7",
     "node-fetch": "^1.7.3",
+    "nodemon": "^1.11.0",
     "xml2js": "^0.4.19",
     "xml2json": "~0.11.0"
   },
@@ -50,8 +64,8 @@
     "test": "test"
   },
   "engines": {
-    "node": "9.0.0",
-    "npm": "5.5.1"
+    "node": "9.3.0",
+    "npm": "5.6.0"
   },
   "bugs": {
     "url": "https://github.com/kbespalyi/graphql/issues"

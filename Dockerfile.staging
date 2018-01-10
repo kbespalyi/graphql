@@ -29,6 +29,8 @@ USER root
 #RUN apt-get install imagemagick libmagick++-dev  libmagick++-6.q16-dev -y
 #ENV PATH /usr/lib/x86_64-linux-gnu/ImageMagick-6.8.9/bin-Q16:$PATH
 
+# install staging packages
+
 WORKDIR $APP_HOME
 COPY . $APP_HOME
 RUN chown -R $USER:$USER $APP_HOME
@@ -40,9 +42,8 @@ ENV NPM_CONFIG_LOGLEVEL warn
 
 #install npm packages first
 
-# install staging packages
+# install NPM packages
 RUN npm install
 
-# install NPM packages
 WORKDIR $APP_HOME
 CMD npm start

@@ -3,6 +3,9 @@
 const extend = require('util')._extend;
 const DB     = process.env.DB || 'mongodb';
 
+const googleApiKey = process.env.GOOGLE_API_KEY;
+const goodreadsApiKey = process.env.GOODREADS_API_KEY;
+
 const DATASTORES = {
   memory:  {},
   mongodb: {
@@ -11,7 +14,8 @@ const DATASTORES = {
     username: '',
     password: '',
     port:     27017
-  }
+  },
+  googleApiKey
 };
 
 if (!(DB in DATASTORES)) {
@@ -24,5 +28,9 @@ const connector = DB === 'memory' ? DB : 'native-connector-' + DB;
 const config    = extend({connector: connector}, DATASTORES[DB]);
 
 module.exports = {
-  db: config
+  db: config,
+  keys: {
+    googleApiKey,
+    goodreadsApiKey
+  }
 };
