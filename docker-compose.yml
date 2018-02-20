@@ -38,7 +38,7 @@ services:
   mongo:
     image: mongo:3.4.10
     ports:
-      - 27019:27019
+      - 27017:27019
     networks:
       - default
   staging:
