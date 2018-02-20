@@ -1,7 +1,7 @@
 web:
   build:
     image: registry.heroku.com/graphql-api-server/app
-    dockerfile_path: ./Dockerfile.staging
+    dockerfile_path: Dockerfile
 #heroku_dockercfg:
 #  image: codeship/heroku-dockercfg-generator
 #  add_docker: true

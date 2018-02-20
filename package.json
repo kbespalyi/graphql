@@ -1,5 +1,5 @@
 {
-  "name": "server-graphql",
+  "name": "graphql-api-server",
   "version": "1.0.0",
   "description": "Demo for GraphQL",
   "author": "Khusein Bespalyi <khusein.bespalyi@gmail.com>",
@@ -13,12 +13,19 @@
     "graphql"
   ],
   "main": "server.js",
+  "module": "src/server/server.js",
   "scripts": {
-    "build": "docker build -t kbespalyi/graphql .",
-    "start": "docker run -d --restart always -p 80:5300 --env-file .env kbespalyi/graphql node index.js",
-    "daemon": "node_modules/.bin/nodemon ./src/server/server.js",
+    "build": "docker build -f Dockerfile --build-arg PORT=5300 -t kbespalyi/graphql-api-server .",
+    "docker-start": "docker run -d --restart always -p 80:5300 --build-arg PORT=5300 --env-file .env kbespalyi/graphql-api-server DB=mongodb node ./server/server.js",
+    "start": "DB=mongodb node ./src/server/server.js",
     "test": "DB=mongodb NODE_ENV=test ./node_modules/.bin/nyc mocha -R spec test/tests/**/*.js test/tests/**/**/*.js test/tests/**/**/**/*.js ",
+    "test-staging": "DB=mongodb NODE_ENV=test mocha -R spec test/tests/**/*.js test/tests/**/**/*.js test/tests/**/**/**/*.js ",
+    "daemon": "node_modules/.bin/nodemon ./src/server/server.js",
+    "precommit": "npm run test-staging",
     "prepush": "make ci"
+  },
+  "options": {
+    "mocha": "--require ./resources/mocha-bootload --check-leaks --full-trace --timeout 15000 test/tests/**/*.js"
   },
   "dependencies": {
     "dotenv": "^4.0.0",
@@ -51,6 +58,7 @@
   "devDependencies": {
     "chai": "3.5.0",
     "chai-things": "0.2.0",
+    "husky": "^0.14.3",
     "mocha": "3.5.3",
     "mocha-circleci-reporter": "0.0.2",
     "mocha-unfunk-reporter": "0.4.0",

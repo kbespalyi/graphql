@@ -1,10 +1,10 @@
 FROM node:9.1.0 AS build
 
-ARG port
+ARG PORT=5300
 
-RUN if [ "x$port" = "x" ] ; then echo Argument port not provided ; else echo port is $port ; fi
+RUN if [ "x$PORT" = "x" ] ; then echo The PORT argument not provided ; else echo The running port is $PORT ; fi
 
-EXPOSE $port
+ENV PORT=$PORT
 
 # setup user home dir
 ENV USER node
@@ -40,10 +40,23 @@ USER $USER
 ENV NODE_ENV staging
 ENV NPM_CONFIG_LOGLEVEL warn
 
-#install npm packages first
+# Install NPM packages first
+ADD ./package.json $APP_HOME/package.json
+ADD ./package-lock.json $APP_HOME/package-lock.json
 
-# install NPM packages
-RUN npm install
+# Setup service
+ENV DIR=/usr/src/service
+WORKDIR $DIR
 
-WORKDIR $APP_HOME
-CMD npm start
+COPY $APP_HOME/package.json package.json
+COPY $APP_HOME/package-lock.json package-lock.json
+COPY $APP_HOME/node_modules node_modules
+COPY $APP_HOME/src src
+
+HEALTHCHECK --interval=5s \
+            --timeout=5s \
+            --retries=6 \
+            CMD curl -fs http://localhost:$PORT/_health || exit 1
+
+# Start app
+CMD ["npm", "start"]

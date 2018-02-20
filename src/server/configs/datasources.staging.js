@@ -13,7 +13,7 @@ const DATASTORES = {
     database: 'graphql-core-staging',
     username: '',
     password: '',
-    port:     27019
+    port:     27017
   },
   googleApiKey
 };

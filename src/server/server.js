@@ -38,7 +38,7 @@ let appConfig = {};
 try {
   appConfig = require(`./configs/datasources.${NODE_ENV}.js`);
   if (appConfig && (NODE_ENV === 'local' || NODE_ENV === 'test')) {
-    if (appConfig.db.host !== '0.0.0.0' || appConfig.db.port !== 27017) {
+    if (appConfig.db.host !== '0.0.0.0' || !appConfig.db.port) {
       throw new Error('Invalid DB');
     }
   }
@@ -47,7 +47,6 @@ try {
 }
 
 app.set('appConfig', appConfig);
-
 
 const translate = require('./services/translateService');
 translate.applyApiKey(appConfig.keys.googleApiKey);

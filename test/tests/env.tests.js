@@ -30,7 +30,7 @@ describe('Test environment', () => {
     });
   });
 
-  it('should be able to get NODE_ENV and dbconfig correct', (done) => {
+  it.only('should be able to get NODE_ENV and dbconfig correct', (done) => {
     let scope;
 
     t.p().then((s) => {
