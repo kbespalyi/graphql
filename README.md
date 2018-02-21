@@ -37,6 +37,9 @@ Request to Goodreads:
 
 # USING Heroku service
 
+heroku login
+heroku git:remote -a graphql-api-server
+git push heroku master
 
 
 
