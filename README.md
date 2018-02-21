@@ -35,6 +35,9 @@ Request to Goodreads:
   }
 }
 
+wget  --output-document=output.txt https://graphql-api-server.herokuapp.com/?query=%7B%0A%20%20book%28isbn%3A%20%220140373535%22%29%20%7B%0A%20%20%20%20title%0A%20%20%20%20isbn%0A%20%20%20%20isbn13%0A%20%20%20%20description%0A%20%20%20%20authors%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20books%20%7B%0A%20%20%20%20%20%20%20%20title%0A%20%20%20%20%20%20%20%20isbn%0A%20%20%20%20%20%20%20%20isbn13%0A%20%20%20%20%20%20%20%20description%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A
+
+
 # USING Heroku service
 
 heroku login
