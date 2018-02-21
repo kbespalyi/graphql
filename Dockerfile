@@ -45,13 +45,11 @@ ADD ./package.json $APP_HOME/package.json
 ADD ./package-lock.json $APP_HOME/package-lock.json
 
 # Setup service
-ENV DIR=/usr/src/service
-WORKDIR $DIR
-
-COPY $APP_HOME/package.json package.json
-COPY $APP_HOME/package-lock.json package-lock.json
-COPY $APP_HOME/node_modules node_modules
-COPY $APP_HOME/src src
+#ENV DIR=/usr/src/service
+#COPY $APP_HOME/package.json $DIR/package.json
+#COPY $APP_HOME/package-lock.json $DIR/package-lock.json
+#COPY $APP_HOME/node_modules $DIR/node_modules
+#COPY $APP_HOME/src $DIR/src
 
 HEALTHCHECK --interval=5s \
             --timeout=5s \

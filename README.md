@@ -38,8 +38,10 @@ Request to Goodreads:
 # USING Heroku service
 
 
+
+
 # USING Kubernetes Cluster on Docker for Mac 18.01 using Swarm CLI
-ressource: http://collabnix.com/running-kubernetes-cluster-on-docker-for-mac-18-01-using-swarm-cli/
+resource: http://collabnix.com/running-kubernetes-cluster-on-docker-for-mac-18-01-using-swarm-cli/
 
 # Checking
 kubectl version

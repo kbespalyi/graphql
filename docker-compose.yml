@@ -59,11 +59,11 @@ services:
       - REDIS_PORT=6379
       - MONGO_URL=mongodb://mongo:27019/graphql-core-staging
     command: npm run test-staging
-  clean:
-    extends:
-      service: staging
-    command: rm -rf node_modules
-  install:
-    extends:
-      service: staging
-    command: npm install --silent
+#  clean:
+#    extends:
+#      service: staging
+#    command: rm -rf node_modules
+#  install:
+#    extends:
+#      service: staging
+#    command: npm install --silent

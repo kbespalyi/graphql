@@ -8,9 +8,9 @@ ci:
 docker-build:
 	docker build -f Dockerfile --build-arg PORT=5300 -t kbespalyi/graphql-api-server .
 clean:
-	docker-compose -f docker-compose.yml run --rm clean
+#	docker-compose -f docker-compose.yml run --rm clean
 install:
-	docker-compose -f docker-compose.yml run --rm install
+#	docker-compose -f docker-compose.yml run --rm install
 staging:
 	docker-compose -f docker-compose.yml up -d staging-deps
 	docker-compose -f docker-compose.yml run --rm staging
