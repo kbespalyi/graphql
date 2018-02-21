@@ -1,0 +1,142 @@
+{
+  "data": {
+    "book": {
+      "title": "The Count of Monte Cristo",
+      "isbn": "0140373535",
+      "isbn13": "9780140373530",
+      "description": "A tale of love and revenge in the post-Napoleonic era. Edmond Dantes, a nineteen-year-old sailor from Marseilles, is soon to be captain of his own ship and to marry his beloved, the beautiful Mercedes. But spiteful enemies provoke his arrest on his wedding day, and he is condemned to life in prison. His sole companion is the 'crazy' priest Faria, who shares with Edmond a secret escape plan, and a map to hidden riches on the island of Monte Cristo. When Faria dies, Edmond attempts the incredible escape alone. finally he is free and rich beyond imagination after 14 years in prison. Keeping his true identity a secret, he enters society as Count of Monte Cristo, a polite, refined nobleman determined to reclaim his lost love, and to avenge his accusers. This is a story of suspense, intrigue, love and the triumph of good over evil.",
+      "authors": [
+        {
+          "name": "Alexandre Dumas",
+          "books": [
+            {
+              "title": "The Count of Monte Cristo",
+              "isbn": "0140449264",
+              "isbn13": "9780140449266",
+              "description": "In 1815 Edmond Dantès, a young and successful merchant sailor who has just recently been granted the succession of his erstwhile captain Leclère, returns to Marseille to marry his Catalan fiancée Mercédès. Thrown in prison for a crime he has not committed, Edmond Dantès is confined to the grim fortress of If. There he learns of a great hoard of treasure hidden on the Isle of Monte Cristo and he becomes determined not only to escape, but also to unearth the treasure and use it to plot the destruction of the three men responsible for his incarceration."
+            },
+            {
+              "title": "The Three Musketeers (The D'Artagnan Romances, #1)",
+              "isbn": "",
+              "isbn13": "",
+              "description": "Alexandre Dumas’s most famous tale— and possibly the most famous historical novel of all time— in a handsome hardcover volume.<br /><br />This swashbuckling epic of chivalry, honor, and derring-do, set in France during the 1620s, is richly populated with romantic heroes, unattainable heroines, kings, queens, cavaliers, and criminals in a whirl of adventure, espionage, conspiracy, murder, vengeance, love, scandal, and suspense. Dumas transforms minor historical figures into larger- than-life characters: the Comte d’Artagnan, an impetuous young man in pursuit of glory; the beguilingly evil seductress “Milady”; the powerful and devious Cardinal Richelieu; the weak King Louis XIII and his unhappy queen—and, of course, the three musketeers themselves, Athos, Porthos, and Aramis, whose motto “all for one, one for all” has come to epitomize devoted friendship. With a plot that delivers stolen diamonds, masked balls, purloined letters, and, of course, great bouts of swordplay, <i>The Three Musketeers </i>is eternally entertaining."
+            },
+            {
+              "title": "The Man in the Iron Mask (The D'Artagnan Romances, #3.4)",
+              "isbn": "0140439242",
+              "isbn13": "9780140439243",
+              "description": "<b>\n  <i>A swashbuckling novel of political intrigue.</i>\n</b><br /><br />In the concluding installment of Alexandre Dumas's celebrated cycle of the Three Musketeers, D'Artagnan remains in the service of the corrupt King Louis XIV after the Three Musketeers have retired and gone their separate ways. Unbeknownst to D'Artagnan, Aramis and Porthos plot to remove the inept king and place the king's twin brother on the throne of France. Meanwhile, a twenty-three-year-old prisoner known only as \"Philippe\" wastes away deep inside the Bastille. Forced to wear an iron mask, Phillippe has been imprisoned for eight years, has no knowledge of his true identity, and has not been told what crime he's committed. When the destinies of the king and Phillippe converge, the Three Musketeers and D'Artagnan find themselves caught between conflicting loyalties."
+            },
+            {
+              "title": "The Prince of Thieves (Tales of Robin Hood by Alexandre Dumas #1)",
+              "isbn": "3704313173",
+              "isbn13": "9783704313171",
+              "description": "The first volume of Alexandre Dumas' two-part interpretation of the story of Robin Hood, popularized for Nineteenth Century audiences by Sir Walter Scott's Ivanhoe, set in England in 1162-66.<br /><br />In this book, Dumas tells the story of Robin Hood's youth: how he is delivered by an unknown man to be raised by poor but honest foresters, his great skill as an archer, how he comes into conflict with the Baron [sic] of Nottingham, how he meets Friar Tuck, the Maid Marian, Little John, Will Scarlett, and others, how he is declared an outlaw by the King, and decamps, with his followers, into Sherwood Forest to wage war against the Baron."
+            },
+            {
+              "title": "Twenty Years After (The D'Artagnan Romances, #2)",
+              "isbn": "0192838431",
+              "isbn13": "9780192838438",
+              "description": "<b>'At this game, whoever does not kill is killed.'</b><br /><br /><i>Twenty Years After</i> (1845), the sequel to <i>The Three Musketeers</i>, is a supreme creation of suspense and heroic adventure.<br /><br />Two decades have passed since the musketeers triumphed over Cardinal Richelieu and Milady. Time has weakened their resolve, and dispersed their loyalties. But treasons and stratagems still cry out for justice: civil war endangers the throne of France, while in England Cromwell threatens to send Charles I to the scaffold. Dumas brings his immortal quartet out of retirement to cross swords with time, the malevolence of men, and the forces of history. But their greatest test is a titanic struggle with the son of Milady, who wears the face of Evil."
+            },
+            {
+              "title": "Queen Margot, or Marguerite de Valois (The Last Valois, #1)",
+              "isbn": "0786880821",
+              "isbn13": "9780786880829",
+              "description": "Released to coincide with the new Miramac film starring Isabelle Adjani, this is the classic novel unavailable for over 25 years. Massacres, conspiracies, clandestine trysts, secret alliances, daring escapes, sumptuous feasts, and duels of wit propel the action in this delightful story of French royalty during the 16th century. Advertising with movie."
+            },
+            {
+              "title": "The Black Tulip",
+              "isbn": "0140448926",
+              "isbn13": "9780140448924",
+              "description": "<i>\n  <b>'To have discovered the black tulip, to have seen it for a moment...then to lose it, to lose it forever!'</b>\n</i><br /><br />Cornelius von Baerle, a respectable tulip-grower, lives only to cultivate the elusive black tulip and win a magnificent prize for its creation. But after his powerful godfather is assassinated, the unwitting Cornelius becomes caught up in deadly political intrigue and is falsely accused of high treason by a bitter rival. Condemned to life imprisonment, his only comfort is Rosa, the jailer's beautiful daughter, and together they concoct a plan to grow the black tulip in secret. Dumas' last major historical novel is a tale of romantic love, jealousy and obsession, interweaving historical events surrounding the brutal murders of two Dutch statesman in 1672 with the phenomenon of tulipomania that gripped seventeenth-century Holland."
+            },
+            {
+              "title": "The Vicomte de Bragelonne (The D'Artagnan Romances, #3.1)",
+              "isbn": "0192834630",
+              "isbn13": "9780192834638",
+              "description": "<i>The Vicomte de Bragelonne</i> opens an epic adventure which continues with <i>Louise de La Valliere</i> and reaches its climax in <i>The Man in the Iron Mask</i>. This new edition of the classic translation presents a key episode in the Musketeers saga, fully annotated and with an introduction by a leading Dumas scholar."
+            },
+            {
+              "title": "Le Comte de Monte-Cristo II (Le Comte de Monte-Cristo #2 of 2)",
+              "isbn": "2070405923",
+              "isbn13": "9782070405923",
+              "description": "Tome II de II.<br /><br />Edmond Dantès, le commandant du Pharaon, fiancé à la belle Mercédès, a vu ses espérances brisées. Plus de vingt ans après son inique emprisonnement, de retour parmi les vivants, il est enfin prêt à accomplir sa vengeance, sans relâche ni pitié. De ses ennemis, il a tout appris. D'Europe en Orient, exhumant leurs crimes l'un après l'autre, il a retrouvé les comploteurs sans scrupule qui jurèrent sa perte. <br /><br />Le baron Danglars, ancien commis aux écritures devenu riche banquier. Monsieur de Villefort, substitut devenu procureur du roi. Le comte Fernand de Morcerf, désormais pair de France, et mari de Mercédès ! Sous le masque du comte de Monte-Cristo, Dantès a juré leur déshonneur, leur ruine et leur mort... Mais peut-il à bon droit se substituer à la divine Providence ? Ne serait-il pas plus grand justicier s'il était magnanime ? Telle est aussi la question que pose le livre le plus humain d'Alexandre Dumas."
+            },
+            {
+              "title": "Louise de La Vallière (The D'Artagnan Romances, #3.3)",
+              "isbn": "0192834657",
+              "isbn13": "9780192834652",
+              "description": "It is early summer, 1661, and the royal court of France is in turmoil. Can it be true that the King is in love with the Duchess d'Orleans? Or has his eye been caught by the sweet and gentle Louise de la Valliere? No one is more anxious to know the answer than Raoul, son of Athos, who loves Louise more than life itself. Behind the scenes, dark intrigues are afoot. Louis XIV is intent on making himself absolute master of France. Imminent crisis shakes the now ageing Musketeers and d'Artagnan out of their complacent retirement, but is the cause just?"
+            }
+          ]
+        },
+        {
+          "name": "Robin A.H. Waterfield",
+          "books": [
+            {
+              "title": "Misery",
+              "isbn": "",
+              "isbn13": "9783526418290",
+              "description": "<i>Simplified adaptation with language-learning materials.</i><br />[<i>Penguin Readers Level 6</i>]<br /><br />Paul Sheldon is Annie Wilkes' favourite writer. She loves all his books about Misery Chastain. When she finds Paul injured after a car crash and takes him home she learns that he has decided to end the series by killing off Misery. Soon Paul's biggest fan turns into his biggest enemy and his nightmare begins! By the master of horror, Stephen King, this will keep you on the edge of your seat!"
+            },
+            {
+              "title": "The Greek Myths: Stories of the Greek Gods and Heroes Vividly Retold",
+              "isbn": "0857382888",
+              "isbn13": "9780857382887",
+              "description": "A highly readable and beautifully illustrated re-telling of the most famous stories from Greek mythology."
+            },
+            {
+              "title": "Dividing the Spoils: The War for Alexander the Great's Empire",
+              "isbn": "0195395239",
+              "isbn13": "9780195395235",
+              "description": "Alexander the Great conquered an enormous empire--stretching from Greece to the Indian subcontinent--and his death triggered forty bloody years of world-changing events. These were years filled with high adventure, intrigue, passion, assassinations, dynastic marriages, treachery, shifting alliances, and mass slaughter on battlefield after battlefield. And while the men fought on the field, the women, such as Alexander's mother Olympias, schemed from their palaces and pavilions.<br /><br /><em>Dividing the Spoils</em> serves up a fast-paced narrative that captures this turbulent time as it revives the memory of the Successors of Alexander and their great contest for his empire. The Successors, Robin Waterfield shows, were no mere plunderers. Indeed, Alexander left things in great disarray at the time of his death, with no guaranteed succession, no administration in place suitable for such a large realm, and huge untamed areas both bordering and within his empire. It was the Successors--battle-tested companions of Alexander such as Ptolemy, Perdiccas, Seleucus, and Antigonus the One-Eyed--who consolidated Alexander's gains. Their competing ambitions, however, eventually led to the break-up of the empire. To tell their story in full, Waterfield draws upon a wide range of historical materials, providing the first account that makes complete sense of this highly complex period.<br /><br />Astonishingly, this period of brutal, cynical warfare was also characterized by brilliant cultural achievements, especially in the fields of philosophy, literature, and art. A new world emerged from the dust and haze of battle, and, in addition to chronicling political and military events, Waterfield provides ample discussion of the amazing cultural flowering of the early Hellenistic Age.<br />"
+            },
+            {
+              "title": "The First Philosophers: The Presocratics and Sophists",
+              "isbn": "0192824546",
+              "isbn13": "9780192824547",
+              "description": "Aristotle said that philosophy begins with wonder, and the first Western philosophers developed theories of the world which express simultaneously their sense of wonder and their intuition that the world should be comprehensible. But their enterprise was by no means limited to this proto-scientific task. Through, for instance, Heraclitus' enigmatic sayings, the poetry of Parmenides and Empedocles, and Zeno's paradoxes, the Western world was introduced to metaphysics, rationalist theology, ethics, and logic, by thinkers who often seem to be mystics or shamans as much as philosophers or scientists in the modern mould. And out of the Sophists' reflections on human beings and their place in the world arose and interest in language, and in political, moral, and social philosophy. <br /> This volume contains a translation of all the most important fragments of the Presocratics and Sophists, and of the most informative testimonia from ancient sources, supplemented by lucid commentary."
+            },
+            {
+              "title": "Why Socrates Died: Dispelling the Myths",
+              "isbn": "0393065278",
+              "isbn13": "9780393065275",
+              "description": "<p><strong><strong>A revisionist account of the most famous trial and execution in Western civilization— one with great resonance for American society today.</strong></strong> <br /><br />In the spring of 399 BCE, Socrates stood trial in his native Athens. The court was packed, and after being found guilty by his peers, Socrates died by drinking a cup of the poison hemlock, a defining moment in ancient civilization. Yet time has transmuted the facts into a fable. Aware of these myths, Robin Waterfield has examined the actual Greek sources and presents a new Socrates, not an atheist or the guru of a weird sect, but a deeply moral thinker whose convictions stood in stark relief to those of his former disciple, Alcibiades, the hawkish and self-serving military leader. Refusing to surrender his beliefs even in the face of death, Socrates, as Waterfield reveals, was determined to save a country that was tearing itself apart, one in moral decline. <em>Why Socrates Died</em> is not only a powerful revisionist book but also a work whose insights translate clearly from ancient Athens to modern America.</p><p></p>"
+            },
+            {
+              "title": "Rebel Planet (Fighting Fantasy, #18)",
+              "isbn": "0140319522",
+              "isbn13": "9780140319521",
+              "description": "<i>Rebel Planet</i> is a science fiction adventure set in the year 2453. In this fictional representation of the future, human colonisation of the galaxy began in 2070 with the settlement of Tropos a few light-years from Earth. Earth and her colonies were conquered by an alien race known as the Arcadians in a twelve-year war around 2300. Humans have become slaves, and are kept alive only to serve their alien masters.<br /><br />However, a human organization known as SAROS (\"Search And Research Of Space\") has discovered that the Arcadians rely on a powerful super-computer to keep themselves networked together. Without this computer, they are merely zombies, incapable of acting on their own. SAROS has limited resources, but a secret plot is hatched to infiltrate Arcadion and destroy the queen computer. The reader plays the role of the last hope of humanity, an undercover agent posing as a space merchant."
+            },
+            {
+              "title": "Phantoms of Fear (Fighting Fantasy, #28)",
+              "isbn": "0140324119",
+              "isbn13": "9780140324112",
+              "description": "How can YOU, humble Wood Elf, over-come the Demon Prince Ishtra?<br /><br />A humble Wood Elf you may be, yet it's YOU the Gods have chosen to take on Ishtra and his gathering army of evil, chaotic creatures. YOU must penetrate this force before it becomes invincible. As a Demon Prince, Ishtra cannot be overpowered by weapons made by any Earthly race – even by the most magical sword of the High Elves – so what can YOU do against him?<br /><br />Perhaps the Wood Elves' powerful art of dream-control could give you important advantages and allow you to cast spells at vital moments in your adventure ...<br /><br />Two dice, a pencil and an eraser are all you need. YOU decide which paths to take, which dangers to risk and which monsters to fight!"
+            },
+            {
+              "title": "Taken at the Flood: The Roman Conquest of Greece",
+              "isbn": "",
+              "isbn13": "",
+              "description": "\"Is there anyone on earth who is so narrow-minded or uninquisitive that he could fail to want to know how and thanks to what kind of political system almost the entire known world was conquered and brought under a single empire in less than fifty-three years?\" --Polybius, Histories<br /> The 53-year period Polybius had in mind stretched from the start of the Second Punic War in 219 BCE until 167, when Rome overthrew the Macedonian monarchy and divided the country into four independent republics. This was the crucial half-century of Rome's spectacular rise to imperial status, but Roman interest in its eastern neighbors began a little earlier, with the First Illyrian War of 229, and climaxed later with the infamous destruction of Corinth in 146. <br /> Taken at the Flood chronicles this momentous move by Rome into the Greek east. Until now, this period of history has been overshadowed by the threat of Carthage in the west, but events in the east were no less important in themselves, and Robin Waterfield's account reveals the peculiar nature of Rome's eastern policy. For over seventy years, the Romans avoided annexation so that they could commit their military and financial resources to the fight against Carthage and elsewhere. Though ultimately a failure, this policy of indirect rule, punctuated by periodic brutal military interventions and intense diplomacy, worked well for several decades, until the Senate finally settled on more direct forms of control. <br /> Waterfield's fast-paced narrative focuses mainly on military and diplomatic maneuvers, but throughout he interweaves other topics and themes, such as the influence of Greek culture on Rome, the Roman aristocratic ethos, and the clash between the two best fighting machines the ancient world ever produced: the Macedonian phalanx and Roman legion. The result is an absorbing account of a critical chapter in Rome's mastery of the Mediterranean."
+            },
+            {
+              "title": "Masks of Mayhem (Fighting Fantasy, #23)",
+              "isbn": "0140321543",
+              "isbn13": "9780140321548",
+              "description": "The safety of the earth is in YOUR hands!<br /><br />Morgana, the fell sorceress of Krill Garnash, is poised to let loose her dreaded Golems, which none are able to resist. For she has equipped them with the Masks of Mayhem, which give them power over all things. Only YOU can end her evil designs - but beware: peril and treachery await you at every turn, and help is hard to find.<br /><br />Two dice, a pencil and an eraser are all you need to make your journey. YOU decide which way to go, which dangers to risk and which monsters to fight."
+            },
+            {
+              "title": "Xenophon's Retreat: Greece, Persia, and the End of the Golden Age",
+              "isbn": "0674023560",
+              "isbn13": "9780674023567",
+              "description": "In \"The Expedition of Cyrus,\" the Western world's first eyewitness account of a military campaign, Xenophon told how, in 401 B.C., a band of unruly Greek mercenaries traveled east to fight for the Persian prince Cyrus the Younger in his attempt to wrest the throne of the mighty Persian empire from his brother.<br /><br />With this first masterpiece of Western military history forming the backbone of his book, Robin Waterfield explores what remains unsaid and assumed in Xenophon's account--much about the gruesome nature of ancient battle and logistics, the lives of Greek and Persian soldiers, and questions of historical, political, and personal context, motivation, and conflicting agendas. The result is a rounded version of the story of Cyrus's ill-fated march and the Greeks' perilous retreat--a nuanced and dramatic perspective on a critical moment in history that may tell us as much about our present-day adventures in the Middle East, site of Cyrus's debacle and the last act of the Golden Age, as it does about the great powers of antiquity in a volatile period of transition.<br /><br />Just as Xenophon brought the thrilling, appalling expedition to life, Waterfield evokes Xenophon himself as a man of his times--reflecting for all time invaluable truths about warfare, overweaning ambition, the pitfalls of power, and the march of history."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
