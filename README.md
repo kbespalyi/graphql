@@ -41,6 +41,12 @@ heroku login
 heroku git:remote -a graphql-api-server
 git push heroku master
 
+# Test locally
+heroku local web
+
+# Restart HEROKU
+heroku restart web.1
+
 
 
 # USING Kubernetes Cluster on Docker for Mac 18.01 using Swarm CLI
