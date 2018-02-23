@@ -51,10 +51,10 @@ ADD ./package-lock.json $APP_HOME/package-lock.json
 #COPY $APP_HOME/node_modules $DIR/node_modules
 #COPY $APP_HOME/src $DIR/src
 
-HEALTHCHECK --interval=5s \
-            --timeout=5s \
-            --retries=6 \
-            CMD curl -fs http://localhost:$PORT/_health || exit 1
+#HEALTHCHECK --interval=5s \
+#            --timeout=5s \
+#            --retries=6 \
+#            CMD curl -fs http://localhost:$PORT/_health || exit 1
 
 # Start app
 CMD ["npm", "start"]

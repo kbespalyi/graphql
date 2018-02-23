@@ -16,13 +16,13 @@
   "module": "src/server/server.js",
   "scripts": {
     "build": "docker build -f Dockerfile --build-arg PORT=5300 -t kbespalyi/graphql-api-server .",
-    "docker-start": "#docker run -d --restart always -p 80:5300 --build-arg PORT=5300 --env-file .env kbespalyi/graphql-api-server DB=mongodb node ./server/server.js",
+    "docker-start": "docker run -d --restart on-failure -p 80:5300 --build-arg PORT=5300 --env-file .env kbespalyi/graphql-api-server DB=mongodb node ./server/server.js",
     "start": "DB=mongodb node ./src/server/server.js",
     "test": "DB=mongodb NODE_ENV=test ./node_modules/.bin/nyc mocha -R spec test/tests/**/*.js test/tests/**/**/*.js test/tests/**/**/**/*.js ",
     "test-staging": "DB=mongodb NODE_ENV=test mocha -R spec test/tests/**/*.js test/tests/**/**/*.js test/tests/**/**/**/*.js ",
     "daemon": "node_modules/.bin/nodemon ./src/server/server.js",
     "precommit": "npm run test-staging",
-    "prepush": "#make ci",
+    "prepush": "make ci",
     "postinstall": "#bower install && gulp build"
   },
   "options": {
