@@ -22,7 +22,7 @@
     "test-staging": "DB=mongodb NODE_ENV=test mocha -R spec test/tests/**/*.js test/tests/**/**/*.js test/tests/**/**/**/*.js ",
     "daemon": "node_modules/.bin/nodemon ./src/server/server.js",
     "precommit": "npm run test-staging",
-    "prepush": "make ci",
+    "prepush": "#make ci",
     "postinstall": "#bower install && gulp build"
   },
   "options": {
