@@ -3,10 +3,11 @@ const {
   GraphQLObjectType,
   GraphQLInt,
   GraphQLString,
-  GraphQLList
+  GraphQLList,
+  GraphQLID
 } = require('graphql');
 
-const translate = require('../schemas/books');
+const translate = require('../services/translateService');
 
 const BookType = new GraphQLObjectType({
   name: 'Book',

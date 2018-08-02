@@ -1,4 +1,6 @@
-#web-ressource https://medium.com/@patrickleet/i-have-a-confession-to-make-i-commit-to-master-6a804f334beb
+#web-resources:
+ https://medium.com/@patrickleet/i-have-a-confession-to-make-i-commit-to-master-6a804f334beb
+ https://www.thepolyglotdeveloper.com/2018/07/protect-graphql-properties-jwt-nodejs-application/
 
 #Automating the pipeline
 

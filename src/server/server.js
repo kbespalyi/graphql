@@ -18,6 +18,10 @@ if (fs.existsSync('./.env')) {
 
 const express = require('express');
 const graphqlHTTP = require('express-graphql');
+const BodyParser = require("body-parser");
+const JsonWebToken = require("jsonwebtoken");
+const Bcrypt = require("bcryptjs");
+
 const app = express();
 const fetch = require('node-fetch')
 const DataLoader = require('dataloader')
@@ -107,6 +111,47 @@ app.use('/',
     };
   })
 );
+
+app.set('jwt-secret', 'otolanesoft');
+app.use(BodyParser.json());
+
+app.post('/login', (request, response) => {
+  const user = {
+      username: 'kbespalyi',
+      password: '$2a$10$wMWiHLos.YH80OnqY9rT3OuvNcbD7D.F.ChFFNZchg9cHhBdZ14/.'
+  };
+  if (request.body.username === user.username) {
+    Bcrypt.compare(request.body.password, user.password, (error, result) => {
+      if (error || !result) {
+        return response.status(401).send({ "message": "Invalid username and password" });
+      }
+      const token = JsonWebToken.sign({ user: user.username }, app.get('jwt-secret'), { expiresIn: 3600 });
+      response.send({"token": token});
+    });
+  } else {
+    return response.status(401).send({ "message": "Invalid username and password" });
+  }
+});
+
+app.use((request, response, next) => {
+  const authHeader = request.headers['authorization'];
+  if (authHeader) {
+    const bearerToken = authHeader.split(' ');
+    if (bearerToken.length == 2 && bearerToken[0].toLowerCase() === 'bearer') {
+      JsonWebToken.verify(bearerToken[1], app.get('jwt-secret'), (error, decodedToken) => {
+        if (error) {
+          return response.status(401).send('Invalid authorization token');
+        }
+        request.decodedToken = decodedToken;
+        next();
+      });
+    } else {
+      next();
+    }
+  } else {
+    next();
+  }
+});
 
 app.startRestApp = function(cb) {
   // start the web server
