@@ -66,26 +66,24 @@ const AuthorType = new GraphQLObjectType({
   })
 });
 
-module.exports = new GraphQLSchema({
-  query: new GraphQLObjectType({
-    name: 'Query',
-    description: '...',
+module.exports = new GraphQLObjectType({
+  name: 'Query',
+  description: '...',
 
-    fields: () => ({
-      author: {
-        type: AuthorType,
-        args: {
-          id: { type: GraphQLInt }
-        },
-        resolve: (root, args, context) => context.authorLoader.load(args.id)
+  fields: () => ({
+    author: {
+      type: AuthorType,
+      args: {
+        id: { type: GraphQLInt }
       },
-      book: {
-        type: BookType,
-        args: {
-          isbn: { type: GraphQLString }
-        },
-        resolve: (root, args, context) => context.bookByISBNLoader.load(args.isbn)
-      }
-    })
+      resolve: (root, args, context) => context.authorLoader.load(args.id)
+    },
+    book: {
+      type: BookType,
+      args: {
+        isbn: { type: GraphQLString }
+      },
+      resolve: (root, args, context) => context.bookByISBNLoader.load(args.isbn)
+    }
   })
 });

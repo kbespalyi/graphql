@@ -1,5 +1,4 @@
 const {
-  GraphQLSchema,
   GraphQLObjectType,
   GraphQLInt,
   GraphQLString,
@@ -59,29 +58,27 @@ const blogsMock = [
   }
 ];
 
-module.exports = new GraphQLSchema({
-  auth: new GraphQLObjectType({
-    name: 'Authentication',
-    fields: {
-      account: {
-        type: AccountType,
-        resolve: (root, args, context, info) =>
-          new Promise((resolve, reject) => {
-            if(!context.decodedToken) {
-                return reject("A valid authorization token is required");
-            }
-            for(var i = 0; i < accountsMock.length; i++) {
-                if(accountsMock[i].username == context.decodedToken.user) {
-                    return resolve(accountsMock[i]);
-                }
-            }
-            resolve(null);
-          })
-      },
-      blogs: {
-        type: GraphQLList(BlogType),
-        resolve: (root, args, context, info) => blogsMock
-      }
+module.exports = new GraphQLObjectType({
+  name: 'Authentication',
+  fields: {
+    account: {
+      type: AccountType,
+      resolve: (root, args, context, info) =>
+        new Promise((resolve, reject) => {
+          if(!context.decodedToken) {
+              return reject("A valid authorization token is required");
+          }
+          for(var i = 0; i < accountsMock.length; i++) {
+              if(accountsMock[i].username == context.decodedToken.user) {
+                  return resolve(accountsMock[i]);
+              }
+          }
+          resolve(null);
+        })
+    },
+    blogs: {
+      type: new GraphQLList(BlogType),
+      resolve: (root, args, context, info) => blogsMock
     }
-  })
+  }
 });

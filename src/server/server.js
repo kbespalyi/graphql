@@ -28,6 +28,8 @@ const DataLoader = require('dataloader')
 const util = require('util');
 const parseXML = util.promisify(require('xml2js').parseString);
 
+const { GraphQLSchema } = require('graphql');
+
 let NODE_ENV = process.env.NODE_ENV;
 
 if (!NODE_ENV) {
@@ -55,7 +57,13 @@ app.set('appConfig', appConfig);
 const translate = require('./services/translateService');
 translate.applyApiKey(appConfig.keys.googleApiKey);
 
-const schema = require('./schemas/books');
+const schemaBook = require('./schemas/books');
+const schemaAccounts = require('./schemas/accounts');
+
+const schema = new GraphQLSchema({
+  query: schemaBook,
+  mutation: schemaAccounts
+});
 
 const goodreadsApiKey = appConfig.keys.goodreadsApiKey;
 
