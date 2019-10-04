@@ -8,12 +8,24 @@ make ci
 
 #Docker build
 
-1) docker image build -f Dockerfile --build-arg PORT=5300 -t graphql-api-server .
+1) docker build -f Dockerfile --build-arg PORT=5300 -t kbespalyi/graphql-api-server .
 2) docker-compose -f docker-compose.yml up -d staging-deps
 
 # Docker run graphql
 
-docker-compose -f docker-compose.yml run --rm staging
+1) docker run --name graphql-api-server -p 80:5300 -d kbespalyi/graphql-api-server:latest
+2) docker-compose -f docker-compose.yml run --rm staging
+3) docker run -d --restart no -p 80:5300 --env-file .env kbespalyi/graphql-api-server DB=mongodb node ./server/server.js
+
+# Stop containers
+docker stop containerID
+docker rm containerID
+
+# Tags
+docker tag kbespalyi/graphql-api-server kbespalyi/graphql-api-server
+docker push kbespalyi/graphql-api-server
+
+
 
 # Kill all running containers
 docker kill $(docker ps -q)
