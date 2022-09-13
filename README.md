@@ -76,11 +76,25 @@ heroku restart web.1
 
 
 # USING Kubernetes Cluster on Docker for Mac 18.01 using Swarm CLI
-resource: http://collabnix.com/running-kubernetes-cluster-on-docker-for-mac-18-01-using-swarm-cli/
+resource:
+- http://collabnix.com/running-kubernetes-cluster-on-docker-for-mac-18-01-using-swarm-cli/
+- https://github.com/docker/compose-on-kubernetes
+
+# init docker-machine
+docker-machine rm default
+docker-machine create --driver virtualbox default
+
+docker-machine env default
+> export DOCKER_TLS_VERIFY="1"
+> export DOCKER_HOST="tcp://192.168.99.101:2376"
+> export DOCKER_CERT_PATH="/Users/khuseinbespalyi/.docker/machine/machines/default"
+> export DOCKER_MACHINE_NAME="default"
 
 # Checking
 kubectl version
 docker stack ls
+
+kubectl get all -n docker
 
 # install
 docker swarm init
