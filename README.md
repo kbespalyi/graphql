@@ -75,6 +75,7 @@ Request to Goodreads:
 >git push heroku master
 
 # Or Upgrading an app and build with Docker-Hub Cli
+resource: https://devcenter.heroku.com/articles/container-registry-and-runtime
 >heroku stack:set heroku-22 -a graphql-api-server
 >git commit --allow-empty -m "Upgrading to heroku-22"
 then up docker and build image
@@ -97,10 +98,13 @@ then push and release container with name "web" (from heroku.yml)
 # Create output.txt based on the get-request to heroku service deployed
 >wget  --output-document=output.txt https://graphql-api-server.herokuapp.com/?query=%7B%0A%20%20book%28isbn%3A%20%220140373535%22%29%20%7B%0A%20%20%20%20title%0A%20%20%20%20isbn%0A%20%20%20%20isbn13%0A%20%20%20%20description%0A%20%20%20%20authors%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20books%20%7B%0A%20%20%20%20%20%20%20%20title%0A%20%20%20%20%20%20%20%20isbn%0A%20%20%20%20%20%20%20%20isbn13%0A%20%20%20%20%20%20%20%20description%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A
 
+# Clean up the heroku build-cache
+>heroku plugins:install heroku-builds
+>heroku builds:cache:purge
 
 
 # USING Kubernetes Cluster on Docker for Mac 18.01 using Swarm CLI
-resource:
+resources:
 - http://collabnix.com/running-kubernetes-cluster-on-docker-for-mac-18-01-using-swarm-cli/
 - https://github.com/docker/compose-on-kubernetes
 
