@@ -17,7 +17,7 @@ if (fs.existsSync('./.env')) {
 }
 
 const express = require('express');
-const graphqlHTTP = require('express-graphql');
+const { graphqlHTTP } = require('express-graphql');
 const BodyParser = require("body-parser");
 const JsonWebToken = require("jsonwebtoken");
 const Bcrypt = require("bcryptjs");

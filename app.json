@@ -1,5 +1,6 @@
 {
   "name": "graphql-api-server",
+  "stack": "heroku-22",
   "buildpacks": [
     { "url": "http://github.com/trustradius/heroku-buildpack-mongo.git" },
     { "url": "https://github.com/heroku/heroku-buildpack-redis.git" },
