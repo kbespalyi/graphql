@@ -3,7 +3,7 @@
  https://www.thepolyglotdeveloper.com/2018/07/protect-graphql-properties-jwt-nodejs-application/
 
 #Automating the pipeline
-
+  
 make ci
 
 #Docker build
