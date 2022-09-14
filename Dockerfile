@@ -1,4 +1,4 @@
-FROM node:9.1.0 AS build
+FROM node:12 AS build
 
 ARG PORT=5300
 

@@ -39,13 +39,13 @@ services:
     networks:
       - graphql
   mongo:
-    image: mongo:3.4.10
+    image: mongo:5.0
     ports:
       - 27017:27019
     networks:
       - graphql
   staging:
-    image: node:9.1.0
+    image: node:12
     ports:
       - 4300:4300
     volumes:
