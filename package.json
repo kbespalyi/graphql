@@ -52,7 +52,7 @@
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.37",
     "mongodb": "^4.9.1",
-    "node-fetch": "2.6.6",
+    "node-fetch": "2.6.7",
     "nodemon": "^2.0.19",
     "request": "^2.88.2",
     "request-promise": "^4.2.6",
